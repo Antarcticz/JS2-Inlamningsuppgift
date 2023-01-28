@@ -1,0 +1,95 @@
+.left-box {
+    @include flex(column, center, center);
+    @include size(15%, 50%);
+    border-radius: 1rem 0 0 1rem;
+    background-color: rgba(0, 0, 0, 0.46);
+    padding: 1.5rem;
+
+    .form-content {
+        @include flex(column, none, center);
+        @include size(100%, 100%);
+        
+        input, textarea {
+            outline: none;
+            padding: 0.5rem;
+        }
+
+        .input-group-1 {
+            @include flex(column, center, flex-start);
+            width: 100%;
+            margin-bottom: 1.5rem;
+    
+            .form-control-1 {
+                width: 100%;
+                height: 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+            }
+        }
+    
+        .input-group-2 {
+            @include flex(column, center, flex-start);
+            @include size(100%, 25%);
+            margin-bottom: 1.5rem;
+    
+            .form-control-2 {
+                @include size(100%, 100%);
+                border-radius: 1rem;
+                box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+            }
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 0.8em 1.4em;
+            margin-top: 0.8rem;
+            border-radius: 0.5rem;
+            border: 0;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color:hsl(300, 100%, 35%);
+            color: #fff;
+            box-shadow: 1px 1px 1px #00000060, inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5);
+
+            &:hover {
+                background-color:hsl(300, 100%, 45%);
+                box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
+            }
+            &:active {
+                background-color:hsl(300, 100%, 25%);
+            }
+        }
+    }
+}
+
+.right-box {
+    @include flex(column, space-between, center);
+    @include size(35%, 50%);
+    border-radius: 0 1rem 1rem 0;
+    background-color: rgba(0, 0, 0, 0.56);
+    padding: 1.5rem;
+
+    .output-group-1 {
+        @include flex(row, space-between, center);
+        @include size(100%, 25%);
+        margin: 1rem;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+
+        .output-left-box {
+            @include flex(column, none, flex-start);
+        }
+        .output-middle-box {
+            @include flex(column, center, flex-start);
+        }
+        .output-right-box {
+            @include flex(column-reverse, none, none);
+        }
+    }
+}
