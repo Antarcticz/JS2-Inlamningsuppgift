@@ -40,9 +40,9 @@
         }
         .btn-submit {
             width: 100%;
-            padding: 0.8em 1.4em;
-            margin-top: 0.8rem;
-            border-radius: 0.5rem;
+            padding: 1.5rem 1.2rem;
+            margin-top: 0.1rem;
+            border-radius: 50%;
             border: 0;
             outline: none;
             text-transform: uppercase;
@@ -73,7 +73,7 @@
     background-color: rgba(0, 0, 0, 0.56);
     padding: 1.5rem;
 
-    .output-group-1 {
+    .task-group-1 {
         @include flex(row, space-between, center);
         @include size(100%, 25%);
         margin: 1rem;
@@ -82,13 +82,13 @@
         border-radius: 1rem;
         box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
 
-        .output-left-box {
+        .task-left-box {
             @include flex(column, none, flex-start);
         }
-        .output-middle-box {
+        .task-middle-box {
             @include flex(column, center, flex-start);
         }
-        .output-right-box {
+        .task-right-box {
             @include flex(column-reverse, none, none);
         }
     }

@@ -33,12 +33,14 @@ h3 {
 }
 
 span {
-  color: grey;
+  color: hsl(0deg, 0%, 40%);
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 p {
   font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .left-box {
@@ -95,9 +97,9 @@ p {
 }
 .left-box .form-content .btn-submit {
   width: 100%;
-  padding: 0.8em 1.4em;
-  margin-top: 0.8rem;
-  border-radius: 0.5rem;
+  padding: 1.5rem 1.2rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
   border: 0;
   outline: none;
   text-transform: uppercase;
@@ -128,7 +130,7 @@ p {
   background-color: rgba(0, 0, 0, 0.56);
   padding: 1.5rem;
 }
-.right-box .output-group-1 {
+.right-box .task-group-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -141,19 +143,19 @@ p {
   border-radius: 1rem;
   box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
-.right-box .output-group-1 .output-left-box {
+.right-box .task-group-1 .task-left-box {
   display: flex;
   flex-direction: column;
   justify-content: none;
   align-items: flex-start;
 }
-.right-box .output-group-1 .output-middle-box {
+.right-box .task-group-1 .task-middle-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-.right-box .output-group-1 .output-right-box {
+.right-box .task-group-1 .task-right-box {
   display: flex;
   flex-direction: column-reverse;
   justify-content: none;
