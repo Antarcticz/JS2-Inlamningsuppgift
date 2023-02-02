@@ -15,7 +15,6 @@
         form {
             @include flex(column, space-between, center);
             @include size(100%, 100%,);
-            // padding: 1rem;
             
             header {
                 @include flex(row, center, center);
@@ -38,10 +37,10 @@
                     box-shadow: $textarea-box-shadow-inset;
                 }
             }
+            
             .button-wrapper {
                 @include flex(row, center, center);
                 width: 100%;
-                
 
                 button {
                     min-width: 100%;
@@ -74,7 +73,6 @@
         border-radius: 0 1rem 1rem 0;
         overflow: hidden;
         
-    
         .output {
             height: 50vh;
             overflow: auto;

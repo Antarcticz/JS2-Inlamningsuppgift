@@ -174,8 +174,8 @@ main {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   text-decoration-thickness: 0.3rem;
-  -webkit-text-decoration-color: #70bc14;
-          text-decoration-color: #70bc14;
+  -webkit-text-decoration-color: hsl(87deg, 81%, 41%);
+          text-decoration-color: hsl(87deg, 81%, 41%);
 }
 
 .modal {
