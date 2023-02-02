@@ -1,95 +1,188 @@
-.left-box {
-    @include flex(column, center, center);
-    @include size(15%, 50%);
-    border-radius: 1rem 0 0 1rem;
-    background-color: rgba(0, 0, 0, 0.46);
-    padding: 1.5rem;
+.wrapper {
+    @include flex(row, center, center);
+    @include size(39vw, 100vh);
+    min-width: 720px;
 
-    .form-content {
-        @include flex(column, none, center);
-        @include size(100%, 100%);
+    .left-box {
+        @include flex(column, center, center);
+        @include size(50%, 50%);
+        border-radius: 1rem 0 0 1rem;
+        background-color: $content-background-color;
+        overflow: auto;
+        padding: 2.3rem;
+
         
-        input, textarea {
-            outline: none;
-            padding: 0.5rem;
-        }
+        form {
+            @include flex(column, space-between, center);
+            @include size(100%, 100%,);
+            // padding: 1rem;
+            
+            header {
+                @include flex(row, center, center);
+                font-size: 0.9rem;
+            }
 
-        .input-group-1 {
-            @include flex(column, center, flex-start);
-            width: 100%;
-            margin-bottom: 1.5rem;
-    
-            .form-control-1 {
+            .textarea-wrapper {
+                @include flex(row, center, center);
                 width: 100%;
-                height: 1.5rem;
-                border-radius: 0.5rem;
-                box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-            }
-        }
-    
-        .input-group-2 {
-            @include flex(column, center, flex-start);
-            @include size(100%, 25%);
-            margin-bottom: 1.5rem;
-    
-            .form-control-2 {
-                @include size(100%, 100%);
-                border-radius: 1rem;
-                box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-            }
-        }
-        .btn-submit {
-            width: 100%;
-            padding: 1.5rem 1.2rem;
-            margin-top: 0.1rem;
-            border-radius: 50%;
-            border: 0;
-            outline: none;
-            text-transform: uppercase;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background-color:hsl(300, 100%, 35%);
-            color: #fff;
-            box-shadow: 1px 1px 1px #00000060, inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5);
+                margin: 0.5rem 0 1rem 0;
 
-            &:hover {
-                background-color:hsl(300, 100%, 45%);
-                box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
+                textarea {
+                    border: 0;
+                    border-radius: 1rem;
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    resize: none;
+                    outline: none;
+                    background-color: $textarea-background-color;
+                    box-shadow: $textarea-box-shadow-inset;
+                }
             }
-            &:active {
-                background-color:hsl(300, 100%, 25%);
+            .button-wrapper {
+                @include flex(row, center, center);
+                width: 100%;
+                
+
+                button {
+                    min-width: 100%;
+                    margin: 0 0 0.5rem 0;
+                    padding: 0.3rem 1.4rem;
+                    border: 0;
+                    border-radius: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    background-color: $button-background-color;
+                    box-shadow: $button-box-shadow-and-inset;
+                    color: $button-color;
+                    transition: all 200ms ease-out;
+                    cursor: pointer;
+        
+                    &:hover {
+                        background-color: $button-hover;
+                        box-shadow: $button-hover-box-shadow-inset;
+                    }
+                    &:active {
+                        background-color: $button-active;
+                    }
+                }
+            }
+        }
+    }
+
+    .right-box {
+        @include size(80%, 50%);
+        border-radius: 0 1rem 1rem 0;
+        overflow: hidden;
+        
+    
+        .output {
+            height: 50vh;
+            overflow: auto;
+            background-color: $output-background-color;
+    
+            .item {
+                text-decoration: underline;
+                margin: 0.1rem;
+                padding: 0.2rem 1rem;
+                border-bottom: 1px solid $item-border-bottom;
+
+                .btnDone {
+                    background-color: $btnDone-background-color;
+                    box-shadow: $btnDone-box-shadow-and-inset;
+    
+                    &:hover {
+                        background-color: $btnDone-hover;
+                        box-shadow: $btnDone-hover-box-shadow-inset;
+                    }
+                    &:active {
+                        background-color: $btnDone-active;
+                    }
+                }
+                
+                .btnUndo {
+                    background-color: $btnUndo-background-color;
+                    box-shadow: $btnUndo-box-shadow-and-inset;
+    
+                    &:hover {
+                        background-color: $btnUndo-hover;
+                        box-shadow: $btnUndo-hover-box-shadow-inset;
+                    }
+                    &:active {
+                        background-color: $btnUndo-active;
+                    }
+                }
+
+                .btnDelete {
+                    background-color: $btnDelete-background-color;
+                    box-shadow: $btnDelete-box-shadow-and-inset;
+    
+                    &:hover {
+                        background-color: $btnDelete-hover;
+                        box-shadow: $btnDelete-hover-box-shadow-inset;
+                    }
+                    &:active {
+                        background-color: $btnDelete-active;
+                    }
+                }
+
+                .btnStyle {
+                    margin: 0.4rem 0 0.4rem 3rem;
+                    padding: 0.2rem 1.4rem;
+                    border: 0;
+                    border-radius: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: $btnStyle-color;
+                    transition: all 200ms ease-out;
+                    cursor: pointer;
+                }
+
+                .line-over {
+                    text-decoration-line: line-through;
+                    text-decoration-thickness: 0.3rem;
+                    text-decoration-color: $line-over-text-decoration-color;
+                }
             }
         }
     }
 }
 
-.right-box {
-    @include flex(column, space-between, center);
-    @include size(35%, 50%);
-    border-radius: 0 1rem 1rem 0;
-    background-color: rgba(0, 0, 0, 0.56);
-    padding: 1.5rem;
+.modal {
+    @include size(100%, 100%);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color: $modal-background-color;
+    display: none;
 
-    .task-group-1 {
-        @include flex(row, space-between, center);
-        @include size(100%, 25%);
-        margin: 1rem;
-        padding: 1rem;
-        background-color: #fff;
+    .modal-content {
+        @include size(30%, 25%);
+        position: relative;
+        margin: 18% auto;
+        padding: 5rem;
+        border: 3px solid $modal-content-border;
         border-radius: 1rem;
-        box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+        text-align: center;
+        background-color: $modal-content-background-color;
+        color: $modal-content-color;
 
-        .task-left-box {
-            @include flex(column, none, flex-start);
-        }
-        .task-middle-box {
-            @include flex(column, center, flex-start);
-        }
-        .task-right-box {
-            @include flex(column-reverse, none, none);
+        .close-button {
+            position: relative;
+            float: right;
+            bottom: 4.8rem;
+            left: 4rem;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: $close-button-color;
+
+            &:hover, &:focus {
+                text-decoration: none;
+                color: $close-button-hover-focus;
+                cursor: pointer;
+            }
         }
     }
 }

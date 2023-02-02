@@ -1,116 +1,116 @@
-const BASE_URL = "https://jsonplaceholder.typicode.com/todos/"
-const tasks = []
+const API_URL = 'https://jsonplaceholder.typicode.com/todos?page=3&_limit=7';
+const BASE_URL = 'https://jsonplaceholder.typicode.com/todos';
 
-const taskList = document.querySelector('#taskList')
 const form = document.querySelector('#form')
+const output = document.querySelector('#output');
+const btnAdd = document.querySelector('#add');
+const modal = document.getElementById("modal");
+const closeButton = document.getElementById('close-button');
 
-const getTasks = async () => {
-    const res = await fetch(BASE_URL)
-    const data = await res.json()
-  
-    console.log(data)
-    data.forEach(task => {
-      tasks.push(task)
-    })
-    listTasks()
-  }
-  
-  
-  getTasks()
-  // console.log(tasks)
-  
-  const listTasks = () => {
-    taskList.innerHTML = ''
-  
-    tasks.forEach(task => {
-      
-      const taskElement = createTaskElement(task)
-      taskList.appendChild(taskElement)
-    })
-  }
-  
-  
-  const createTaskElement = (taskData) => {
-    let task = document.createElement('div')
-    task.id = taskData.id
-    task.classList.add('task-group-1')
-  
-    let todo = document.createElement('p')
-    todo.classList.add('task-todo')
-    todo.innerText = taskData.todo
-    
-    
-    let when = document.createElement('p')
-    when.classList.add('task_when')
-    when.innerText = taskData.when
-    
-    let where = document.createElement('p')
-    where.classList.add('task_where')
-    where.innerText = taskData.where
-    
-    let description = document.createElement('p')
-    description.classList.add('task_description')
-    description.innerText = taskData.description
+let listArray = [];
 
-    task.appendChild(todo)
-    task.appendChild(when)
-    task.appendChild(where)
-    task.appendChild(description)
-  
-    return task
-  }
-  
-  const removetask = e => {
-    if(!e.target.classList.contains('task')){
-      console.log('klickade inte på en div')
-      return
+const getTodos = async () => {
+    const res = await fetch(API_URL)
+    const todos = await res.json()
+
+    console.log(todos)
+
+    todos.forEach(todo => {
+        output.appendChild(createElement(todo))
+    })
+}
+
+getTodos();
+
+const createElement = (todo) => {
+    const card = document.createElement('div')
+    card.className = 'item'
+    card.id = todo.id
+    const title = document.createElement('p')
+    title.innerText = todo.title
+
+    const btnDone = document.createElement('button')
+    btnDone.innerText = 'Done'
+    btnDone.className = 'btnDone btnStyle'
+    if (todo.completed) {
+        title.classList.add('line-over')
+        btnDone.classList.add('completed')
     }
-  
-    fetch(BASE_URL + e.target.id, {
-      method: 'DELETE'
+    btnDone.addEventListener('click', () => {
+        title.classList.toggle('line-over')
+        btnDone.classList.toggle('completed')
     })
-      .then(res => {
-        console.log(res)
-        if(res.ok) {
-          e.target.remove()
-          const index = tasks.findIndex(task => task.id == e.target.id)
-          tasks.splice(index, 1)
-          console.log(tasks)
+    const btnUndo = document.createElement('button')
+    btnUndo.innerText = 'Undo'
+    btnUndo.className = 'btnUndo btnStyle'
+    btnUndo.addEventListener('click', () => {
+        title.classList.remove('line-over')
+        btnDone.classList.remove('completed')
+    })
+    const btnDelete = document.createElement('button')
+    btnDelete.innerText = 'Delete'
+    btnDelete.className = 'btnDelete btnStyle'
+    btnDelete.addEventListener('click', () => {
+        if (btnDone.classList.contains('completed')) {
+            btnDelete.parentElement.remove()
+
+            fetch(BASE_URL + "/" + btnDelete.parentElement.id, {
+                method: 'DELETE'
+            })
         }
-      })
-  }
-  
-  const handleSubmit = e => {
-    e.preventDefault()
-    // tbd Validera formuläret.
-  
-  
-    const newtask = {
-      todo: document.querySelector('#to-do').value,
-      when: document.querySelector('#when').value,
-      where: document.querySelector('#where').value,
-      description: document.querySelector('#description').value,
-    //   company: {
-    //     todo: document.querySelector('#where').value,
-    //   }
+        else {
+            function openModal() {
+                modal.style.display = 'block';
+            }
+        }
+        openModal()
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        })
+    })
+
+    card.appendChild(title);
+    card.appendChild(btnDone);
+    card.appendChild(btnUndo);
+    card.appendChild(btnDelete);
+
+    return card;
+};
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const newTodo = {
+        title: document.querySelector('#text').value,
+        completed: false
     }
-  
+
     fetch(BASE_URL, {
-    method: 'POST',
-    body: JSON.stringify(newtask),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-  
-      tasks.push(data)
-      const taskElement = createtaskElement(data)
-      taskList.appendChild(taskElement)
-    });
-  
-  }
-  
-  taskList.addEventListener('click', removetask)
-  form.addEventListener('submit', handleSubmit)
+        method: 'POST',
+        body: JSON.stringify(newTodo),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    }).then((res) => res.json())
+        .then((todo) => {
+            const card = createElement(todo)
+            document.querySelector('#output').appendChild(card)
+
+            console.log(todo);
+        })
+});
+
+empty = () => {
+    const input = document.querySelector('#text').value
+    if (input.trim() == '') {
+        alert(`Todo can't be empty`);
+        return false;
+    }
+};

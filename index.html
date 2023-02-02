@@ -8,103 +8,32 @@
     <title>TO-DO Document</title>
 </head>
 <body>
-    <div class="left-box">
-        <form id="form" class="form-content">
-            <div class="input-group-1">
-                <label for="to-do">TO-DO:</label>
-                <input type="text" id="to-do" class="form-control-1">
+    <main>
+        <div class="wrapper">
+            <div class="left-box">
+                <form id="form">
+                    <header><h1>TO-DO Document</h1></header>
+                    <div class="textarea-wrapper">
+                        <textarea type="text" id="text" placeholder="Write your todo here..." cols="25" rows="15"></textarea>
+                    </div>
+                    <div class="button-wrapper">
+                        <button type="submit" id="add" value="submit" onClick="return empty()">Add</button>
+                    </div>
+                </form>
             </div>
-            <div class="input-group-1">
-                <label for="when">WHEN:</label>
-                <input type="text" id="when" class="form-control-1">
-            </div>
-            <div class="input-group-1">
-                <label for="where">WHERE:</label>
-                <input type="text" id="where" class="form-control-1">
-            </div>
-            <div class="input-group-2">
-                <label for="description">DESCRIPTION:</label>
-                <textarea type="text" id="description" class="form-control-2"></textarea>
-            </div>
-            <div>
-                <button id="submit" class="btn-submit btn-primary">add</button>
-            </div>
-        </form>
-    </div>
-    <div class="right-box">
-        <div id="taskList">TASKS</div>
-        <div class="task-group-1">
-            <div class="task-left-box">
-                <div class="task-todo">
-                    <h3></h3>
-                </div>
-                <div class="task-when">
-                    <span></span>
-                </div>
-                <div class="task-where">
-                    <span></span>
-                </div>
-            </div>
-            <div class="task-middle-box">
-                <div class="task-decription">
-                    <p></p>
-                </div>
-            </div>
-            <div class="task-right-box">
-                <input id="checkbox" type="checkbox" name="box">
+            <div class="right-box">
+                <div id="output" class="output"></div>
             </div>
         </div>
-        <div class="task-group-1">
-            <div class="task-left-box">
-                <div class="task-todo">
-                    <h3>Köpa ny TV</h3>
-                </div>
-                <div class="task-when">
-                    <span>Idag, 10:00</span>
-                </div>
-                <div class="task-where">
-                    <span>Södertälje</span>
-                </div>
-            </div>
-            <div class="task-middle-box">
-                <div class="task-decription">
-                    <p>
-                        Res på Elgiganten <br>
-                        i Södertälje
-                    </p>
-                </div>
-            </div>
-            <div class="task-right-box">
-                <input id="checkbox" type="checkbox" name="box">
-            </div>
-        </div>
-        <div class="task-group-1">
-            <div class="task-left-box">
-                <div class="task-todo">
-                    <h3>Träna</h3>
-                </div>
-                <div class="task-when">
-                    <span>Imorgon, 13:20</span>
-                </div>
-                <div class="task-where">
-                    <span>Hagsätra Centrum</span>
-                </div>
-            </div>
-            <div class="task-middle-box">
-                <div class="task-decription">
-                    <p>
-                        10 min joggning, <br>
-                        Bröst, triceps, axlar
-                    </p>
-                </div>
-            </div>
-            <div class="task-right-box">
-                <input id="checkbox" type="checkbox" name="box">
-            </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-button" class="close-button">&times;</span>
+            <p>
+                You can't delete a todo if it's not marked as done. 
+            </p>
         </div>
     </div>
-
-    
     <script src="script.js"></script>
 </body>
 </html>
