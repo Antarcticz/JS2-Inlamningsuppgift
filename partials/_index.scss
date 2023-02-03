@@ -18,6 +18,7 @@
             header {
                 @include flex(row, center, center);
                 font-size: 0.9rem;
+                cursor: default;
             }
 
             .textarea-wrapper {
@@ -82,6 +83,7 @@
                 margin: 0.1rem;
                 padding: 0.2rem 1rem;
                 border-bottom: 1px solid $item-border-bottom;
+                cursor: default;
 
                 .btnDone {
                     background-color: $btnDone-background-color;
@@ -157,7 +159,8 @@
     .modal-content {
         @include size(30%, 25%);
         position: relative;
-        margin: 18% auto;
+        top: 38vh;
+        margin:auto;
         padding: 5rem;
         border: 3px solid $modal-content-border;
         border-radius: 1rem;
@@ -180,6 +183,10 @@
                 color: $close-button-hover-focus;
                 cursor: pointer;
             }
+        }
+
+        p {
+            cursor: default;
         }
     }
 }

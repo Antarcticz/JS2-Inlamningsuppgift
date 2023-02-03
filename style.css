@@ -65,6 +65,7 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
+  cursor: default;
 }
 .wrapper .left-box form .textarea-wrapper {
   display: flex;
@@ -128,6 +129,7 @@ main {
   margin: 0.1rem;
   padding: 0.2rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: default;
 }
 .wrapper .right-box .output .item .btnDone {
   background-color: hsl(87deg, 81%, 31%);
@@ -196,7 +198,8 @@ main {
   width: 30%;
   height: 25%;
   position: relative;
-  margin: 18% auto;
+  top: 38vh;
+  margin: auto;
   padding: 5rem;
   border: 3px solid #ff0000;
   border-radius: 1rem;
@@ -218,6 +221,9 @@ main {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+}
+.modal .modal-content p {
+  cursor: default;
 }
 
 .left-box::-webkit-scrollbar-track {
