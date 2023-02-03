@@ -36,6 +36,21 @@
                     background-color: $textarea-background-color;
                     box-shadow: $textarea-box-shadow-inset;
                 }
+                textarea::-webkit-scrollbar-track {
+                    background-color: transparent;
+                    margin-top: 2rem;
+                }
+                textarea::-webkit-scrollbar {
+                    width: 6px;
+                    background-color: transparent;
+                }
+                textarea::-webkit-scrollbar-thumb {
+                    background-color: #0000007d;
+                    border-radius: 4px;
+                }
+                textarea::-webkit-scrollbar-corner {
+                    background-color: transparent;
+                }
             }
             
             .button-wrapper {
@@ -67,7 +82,7 @@
             }
         }
     }
-
+    
     .right-box {
         @include size(80%, 50%);
         border-radius: 0 1rem 1rem 0;
@@ -77,7 +92,7 @@
             height: 50vh;
             overflow: auto;
             background-color: $output-background-color;
-    
+
             .item {
                 text-decoration: underline;
                 margin: 0.1rem;
@@ -141,6 +156,21 @@
                     text-decoration-color: $line-over-text-decoration-color;
                 }
             }
+        }
+        .output::-webkit-scrollbar-track {
+            background-color: transparent;
+            margin-top: 2rem;
+        }
+        .output::-webkit-scrollbar {
+            width: 6px;
+            background-color: transparent;
+        }
+        .output::-webkit-scrollbar-thumb {
+            background-color: #0000007d;
+            border-radius: 4px;
+        }
+        .output::-webkit-scrollbar-corner {
+            background-color: transparent;
         }
     }
 }

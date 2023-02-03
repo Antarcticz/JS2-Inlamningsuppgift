@@ -19,7 +19,6 @@ const getTodos = async () => {
         output.appendChild(createElement(todo));
     });
 };
-
 getTodos();
 
 const createElement = (todo) => {
@@ -33,7 +32,6 @@ const createElement = (todo) => {
     const btnDone = document.createElement('button');
     btnDone.innerText = 'Done';
     btnDone.className = 'btnDone btnStyle';
-
     if (todo.completed) {
         title.classList.add('line-over');
         btnDone.classList.add('completed');
@@ -58,7 +56,6 @@ const createElement = (todo) => {
     btnDelete.className = 'btnDelete btnStyle';
 
     btnDelete.addEventListener('click', () => {
-
         if (btnDone.classList.contains('completed')) {
             btnDelete.parentElement.remove();
 
@@ -77,12 +74,11 @@ const createElement = (todo) => {
             modal.style.display = 'none';
         });
 
-        window.addEventListener('click', (e) => {
-
-            if (e.target == modal) {
-                modal.style.display = 'none';
-            };
-        });
+        // window.addEventListener('click', (e) => {
+        //     if (e.target == modal) {
+        //         modal.style.display = 'none';
+        //     };
+        // });
     });
 
     card.appendChild(title);
@@ -93,36 +89,36 @@ const createElement = (todo) => {
     return card;
 };
 
-form.addEventListener('submit', e => {
+form.addEventListener("submit", e => {
     e.preventDefault();
+  
+    let inputTodo = document.querySelector('textarea[type="text"]').value;
 
-    const newTodo = {
-        title: document.querySelector('#text').value,
-        completed: false,
-    };
-
-    fetch(BASE_URL, {
-        method: 'POST',
-        body: JSON.stringify(newTodo),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-    .then((res) => res.json())
-
-    .then((todo) => {
-        const card = createElement(todo);
-        document.querySelector('#output').appendChild(card);
-        console.log(todo);
-    });
-});
-
-empty = () => {
-    const input = document.querySelector('#text').value;
-
-    if (input.trim() == '') {
-        alert(`Todo can't be empty`);
+    if (inputTodo == '') {
+        alert(`Todo input can't be empty`);
 
         return false;
+    } 
+    else {
+        const newTodo = {
+            title: inputTodo,
+            completed: false,
+        };
+        fetch(BASE_URL, {
+            method: 'POST',
+            body: JSON.stringify(newTodo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((res) => res.json())
+
+        .then((todo) => {
+            const card = createElement(todo);
+            output.appendChild(card);
+  
+            console.log(todo);
+        });
+        form.reset();
     };
-};
+});

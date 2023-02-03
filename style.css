@@ -81,6 +81,21 @@ main {
   background-color: hsl(0deg, 0%, 95%);
   box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5);
 }
+.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-top: 2rem;
+}
+.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4901960784);
+  border-radius: 4px;
+}
+.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 .wrapper .left-box form .button-wrapper {
   display: flex;
   flex-direction: row;
@@ -176,6 +191,21 @@ main {
   text-decoration-thickness: 0.3rem;
   -webkit-text-decoration-color: hsl(87deg, 81%, 41%);
           text-decoration-color: hsl(87deg, 81%, 41%);
+}
+.wrapper .right-box .output::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-top: 2rem;
+}
+.wrapper .right-box .output::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+.wrapper .right-box .output::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4901960784);
+  border-radius: 4px;
+}
+.wrapper .right-box .output::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 .modal {
