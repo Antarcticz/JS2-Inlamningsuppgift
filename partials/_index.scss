@@ -7,7 +7,7 @@
         @include flex(column, center, center);
         @include size(50%, 50%);
         border-radius: 1rem 0 0 1rem;
-        background-color: $content-background-color;
+        background-color: $left-box-background-color;
         overflow: auto;
         padding: 2.3rem;
 
@@ -140,21 +140,6 @@
                     text-decoration-color: $line-over-text-decoration-color;
                 }
             }
-        }
-        .output::-webkit-scrollbar-track {
-            background-color: transparent;
-            margin-top: 2rem;
-        }
-        .output::-webkit-scrollbar {
-            width: 6px;
-            background-color: transparent;
-        }
-        .output::-webkit-scrollbar-thumb {
-            background-color: #0000007d;
-            border-radius: 4px;
-        }
-        .output::-webkit-scrollbar-corner {
-            background-color: transparent;
         }
     }
 }

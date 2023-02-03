@@ -15,5 +15,7 @@ body {
 
 main {
     @include flex(row, center, center);
+    @include size(100%, 100vh);
+    min-width: 720px;
 }
 
