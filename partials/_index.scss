@@ -11,7 +11,6 @@
         overflow: auto;
         padding: 2.3rem;
 
-        
         form {
             @include flex(column, space-between, center);
             @include size(100%, 100%,);
@@ -35,21 +34,6 @@
                     outline: none;
                     background-color: $textarea-background-color;
                     box-shadow: $textarea-box-shadow-inset;
-                }
-                textarea::-webkit-scrollbar-track {
-                    background-color: transparent;
-                    margin-top: 2rem;
-                }
-                textarea::-webkit-scrollbar {
-                    width: 6px;
-                    background-color: transparent;
-                }
-                textarea::-webkit-scrollbar-thumb {
-                    background-color: #0000007d;
-                    border-radius: 4px;
-                }
-                textarea::-webkit-scrollbar-corner {
-                    background-color: transparent;
                 }
             }
             

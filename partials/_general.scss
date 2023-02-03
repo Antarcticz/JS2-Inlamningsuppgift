@@ -11,8 +11,6 @@ body {
     @include background-image(url('images/space.jpg'));
     min-height: 100vh;
     color: #fff;
-
-    // @include scrollbars(10px, pink, red);
 }
 
 main {

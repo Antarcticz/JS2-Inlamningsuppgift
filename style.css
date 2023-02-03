@@ -81,21 +81,6 @@ main {
   background-color: hsl(0deg, 0%, 95%);
   box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5);
 }
-.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-track {
-  background-color: transparent;
-  margin-top: 2rem;
-}
-.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar {
-  width: 6px;
-  background-color: transparent;
-}
-.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.4901960784);
-  border-radius: 4px;
-}
-.wrapper .left-box form .textarea-wrapper textarea::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 .wrapper .left-box form .button-wrapper {
   display: flex;
   flex-direction: row;
@@ -192,21 +177,6 @@ main {
   -webkit-text-decoration-color: hsl(87deg, 81%, 41%);
           text-decoration-color: hsl(87deg, 81%, 41%);
 }
-.wrapper .right-box .output::-webkit-scrollbar-track {
-  background-color: transparent;
-  margin-top: 2rem;
-}
-.wrapper .right-box .output::-webkit-scrollbar {
-  width: 6px;
-  background-color: transparent;
-}
-.wrapper .right-box .output::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.4901960784);
-  border-radius: 4px;
-}
-.wrapper .right-box .output::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 
 .modal {
   width: 100%;
@@ -245,4 +215,58 @@ main {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+}
+
+.left-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.left-box::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: transparent;
+}
+
+.left-box::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.left-box::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: hsla(0deg, 0%, 0%, 0.26);
+  border-radius: 1rem;
+}
+
+textarea::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.output::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.output::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: transparent;
+}
+
+.output::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.output::-webkit-scrollbar-corner {
+  background-color: transparent;
 }/*# sourceMappingURL=style.css.map */

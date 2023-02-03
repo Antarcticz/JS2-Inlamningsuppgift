@@ -1,12 +1,24 @@
 //  ___________________________________________________Left-box__________________________________________________________________
-$content-background-color: rgba(0, 0, 0, 0.46);
+$left-box-background-color: rgba(0, 0, 0, 0.46);
+
+//  ___________________________________________________Left-box Scrollbar________________________________________________________
+$left-box-scrollbar-track-background-color: transparent;
+$left-box-scrollbar-background-color: transparent;
+$left-box-scrollbar-thumb-background-color: rgba(0, 0, 0, 0.66);
+$left-box-scrollbar-corner-background-color: transparent;
 
 //  ___________________________________________________Textarea__________________________________________________________________
 $textarea-background-color: hsl(0, 0%, 95%);
 $textarea-box-shadow-inset: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5);
 
+//  ___________________________________________________Textarea Scrollbar________________________________________________________
+$textarea-scrollbar-track-background-color: transparent;
+$textarea-scrollbar-background-color: transparent;
+$textarea-scrollbar-thumb-background-color: hsla(0, 0%, 0%, 0.26);
+$textarea-scrollbar-corner-background-color: transparent;
+
 //  ___________________________________________________Button____________________________________________________________________
-$button-background-color: hsl(300, 100%, 35%);
+$button-background-color: hsl(300, 100%, 35%);  
 $button-box-shadow-and-inset: 1px 1px 1px #00000060, inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5);
 $button-hover: hsl(300, 100%, 45%);
 $button-hover-box-shadow-inset: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
@@ -15,6 +27,12 @@ $button-color: #fff;
 
 //  ___________________________________________________Output____________________________________________________________________
 $output-background-color: rgba(0, 0, 0, 0.56);
+
+//  ___________________________________________________Output Scrollbar__________________________________________________________
+$output-scrollbar-track-background-color: transparent;
+$output-scrollbar-background-color: transparent;
+$output-scrollbar-thumb-background-color: rgba(0, 0, 0, 0.66);
+$output-scrollbar-corner-background-color: transparent;
 
 //  ___________________________________________________Item______________________________________________________________________
 $item-border-bottom: rgba(255, 255, 255, 0.250);
