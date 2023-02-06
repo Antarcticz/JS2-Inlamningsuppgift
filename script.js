@@ -1,7 +1,6 @@
 const API_URL = 'https://jsonplaceholder.typicode.com/todos?page=1&_limit=7/';
 const BASE_URL = 'https://jsonplaceholder.typicode.com/todos/';
 
-
 const form = document.querySelector('#form');
 const output = document.querySelector('#output');
 const btnAdd = document.querySelector('#add');
